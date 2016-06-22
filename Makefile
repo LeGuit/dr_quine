@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2016/06/22 18:47:21 by gwoodwar         ###   ########.fr        #
+#    Updated: 2016/06/22 19:50:11 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,30 +18,20 @@ COLLEEN =	Colleen
 GRACE =		Grace
 SULLY =		Sully
 HELP =		Help
-INCLS =		-I./includes -I./libft/includes 
-LIBFT = 	-L./libft -lft
-
-SRCS_DIR =	srcs
-OBJS_DIR =	objs
-
-LIBS =	libft/libft.a
 
 all: $(COLLEEN) $(GRACE) $(SULLY)
 
-$(LIBS):
-	make -C $(dir $@)
-
-$(COLLEEN) $(GRACE) $(SULLY): $(LIBS)
-	$(CC) $(FLAGS) -o $@ $@.c $(LIBFT)
+$(COLLEEN) $(GRACE) $(SULLY): 
+	$(CC) $(FLAGS) -o $@ $@.c
 
 colleen:
-	$(CC) $(FLAGS) -o $(COLLEEN) $(COLLEEN).c $(LIBFT)
+	$(CC) $(FLAGS) -o $(COLLEEN) $(COLLEEN).c
 
 grace:
-	$(CC) $(FLAGS) -o $(GRACE) $(GRACE).c $(LIBFT)
+	$(CC) $(FLAGS) -o $(GRACE) $(GRACE).c
 
 sully:
-	$(CC) $(FLAGS) -o $(SULLY) $(SULLY).c $(LIBFT)
+	$(CC) $(FLAGS) -o $(SULLY) $(SULLY).c
 
 help:
 	$(CC) $(FLAGS) -o $(HELP) $(HELP).c
